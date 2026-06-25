@@ -1,0 +1,6 @@
+/* universal selector */
+
+ul,
+p {
+    background-color: magenta;
+}

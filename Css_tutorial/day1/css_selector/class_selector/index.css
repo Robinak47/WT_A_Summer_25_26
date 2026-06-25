@@ -1,0 +1,13 @@
+/* universal selector */
+
+.container {
+    background-color: aqua;
+}
+
+#div1 {
+    border: 2px solid red;
+}
+
+.borderDesign {
+    border: 2px solid black
+}

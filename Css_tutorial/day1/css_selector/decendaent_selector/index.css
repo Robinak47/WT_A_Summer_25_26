@@ -1,0 +1,8 @@
+/* universal selector */
+ul li {
+    color: aqua;
+}
+
+div p {
+    color: magenta;
+}

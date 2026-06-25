@@ -1,0 +1,34 @@
+#div1 {
+    background-color: mediumvioletred;
+    border: 2px solid yellow;
+    height: 200px;
+    width: 400px;
+}
+
+#div2 {
+    background-color: mediumvioletred;
+    border: 2px solid yellow;
+    height: 200pt;
+    width: 400pt;
+}
+
+#div3 {
+    background-color: mediumvioletred;
+    border: 2px solid yellow;
+    height: 200mm;
+    width: 200mm;
+}
+
+#div4 {
+    background-color: mediumvioletred;
+    border: 2px solid yellow;
+    height: 100cm;
+    width: 20cm;
+}
+
+#div5 {
+    background-color: mediumvioletred;
+    border: 2px solid yellow;
+    height: 100in;
+    width: 10in;
+}

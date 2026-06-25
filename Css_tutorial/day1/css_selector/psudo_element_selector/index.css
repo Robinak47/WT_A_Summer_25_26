@@ -1,0 +1,5 @@
+p::first-letter {
+    color: green;
+    font-weight: bold;
+    font-size: 200px;
+}
