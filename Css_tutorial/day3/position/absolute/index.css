@@ -1,0 +1,35 @@
+#parent {
+    border: 2px solid red;
+    background-color: darkgoldenrod;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    top: 50px;
+}
+
+#child {
+    border: 2px solid rgb(37, 182, 93);
+    background-color: rgb(208, 201, 185);
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 400px;
+}
+
+#outside_child {
+    background-color: aqua;
+    position: absolute;
+    top: 40px;
+}
+
+a {
+    display: inline-block;
+    width: 100px;
+    border: 2px solid red;
+
+}
+
+#a2 {
+    position: absolute;
+    top: 40px;
+}

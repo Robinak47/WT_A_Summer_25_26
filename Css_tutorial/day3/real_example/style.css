@@ -1,0 +1,87 @@
+header {
+    position: relative;
+    background-color: bisque;
+    display: inline-block;
+    left: 400px;
+
+}
+
+
+.profile {
+    position: absolute;
+    background-color: rgb(89, 155, 200);
+    display: flex;
+    width: 200px;
+    height: 60px;
+    right: 0px;
+    top: 10px;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.menu {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    top: 20px;
+}
+
+.menu-item {
+    background-color: aquamarine;
+    width: 120px;
+    height: 40px;
+}
+
+.menu-item:hover {
+    outline: 3px solid darkred;
+}
+
+.menu-item:focus {
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 8px;
+
+}
+
+.footer {
+    display: inline-flex;
+    position: absolute;
+    top: 1000px;
+    background-color: bisque;
+    width: 300px;
+    height: 50px;
+    left: 400px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.container {
+    border: 2px solid black;
+    display: flex;
+    position: absolute;
+    top: 140px;
+    left: 150px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    background-color: rgb(207, 169, 243);
+    justify-content: space-around;
+
+}
+
+.card {
+    position: relative;
+
+    border: 2px solid black;
+    display: inline-flex;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: chocolate;
+}

@@ -1,0 +1,54 @@
+#div1 {
+    background-color: aqua;
+    position: relative;
+    display: inline;
+    left: 300px;
+
+}
+
+#div2 {
+    background-color: mediumaquamarine;
+    position: relative;
+    top: 200px;
+}
+
+#div3 {
+    background-color: magenta;
+    position: relative;
+}
+
+#div4 {
+    background-color: rgb(155, 34, 34);
+    position: relative;
+    display: inline;
+    left: 300px;
+    bottom: 40px;
+
+
+
+
+
+}
+
+
+#parent {
+    border: 2px solid red;
+    background-color: darkgoldenrod;
+    position: relative;
+    top: 800px;
+    width: 800px;
+    height: 800px;
+}
+
+#child {
+    border: 2px solid rgb(37, 182, 93);
+    background-color: rgb(208, 201, 185);
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 400px;
+
+
+
+
+}
