@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button id="btn1" onclick="alert('meow meow')">click me</button>
+    <button onclick="document.body.style.background='magenta'">click to change the background color</button>
+    <p id="p1">font size test</p>
+    <button onclick="zoomIn()">zoom in</button>
+    <button onclick="zoomOut()">zoom out</button>
+
+    <script>
+
+        document.getElementById("btn1").style.display = "block";
+        let fontSize = 30;
+        function zoomIn() {
+            const para = document.getElementById("p1");
+            fontSize = fontSize + 5;
+            para.style.fontSize = fontSize + "px";
+
+
+
+        }
+
+        function zoomOut() {
+            const para = document.getElementById("p1");
+            fontSize = fontSize - 5;
+            para.style.fontSize = fontSize + "px";
+
+
+
+        }
+    </script>
+</body>
+
+</html>

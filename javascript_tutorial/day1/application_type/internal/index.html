@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <button onclick="sayMeow()">click me</button>
+    <button onclick="sayMeow()">click me</button>
+    <button id="btn3"> now click me </button>
+
+    <script>
+
+        function sayMeow() {
+            alert("moew")
+        }
+
+        const btn = document.getElementById("btn3");
+        btn.addEventListener('click', () => {
+            alert("i am button3");
+        })
+    </script>
+</body>
+
+</html>
