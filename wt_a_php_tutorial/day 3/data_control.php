@@ -14,92 +14,143 @@
         $fileSize=$_FILES["proPic"]["size"];
 
 
+        $hasError=false;
+        $nameError="";
+        $ageError="";
+        $emailError="";
+        $genderError="";
+        $sportsError="";
+        $countryError="";
+        $file_error="";
+
+
         if($name=="")
         {
-            echo "name should be provided","<br>";
+            $nameError="name should be provided";
+            $hasError=true;
         }
         elseif(!preg_match('/^[a-zA-Z\' -]+$/', $name))
         {
-            echo "name cannot have numbers or special char";
+            $nameError="name cannot have numbers or special char";
+            $hasError=true;
         }
-        else
-        {
-            echo $name, "<br>";
-        }
-
+        
         if(empty($age))
         {
-            echo "age should be provided","<br>";     
+            $ageError="age should be provided";     
+            $hasError=true;
         }
+
         elseif(!filter_var($age, FILTER_VALIDATE_INT))
         {
-            echo "age must be int type","<br>";
+            $ageError="age must be int type";
+            $hasError=true;
         }
         elseif($age>80 || $age<18)
         {
-            echo "you are too young or old to use our system","<br>";
+            $ageError="you are too young or old to use our system";
+            $hasError=true;
         }
-        else
-        {
-            echo $age,"<br>";
-        }
-
+        
         if(empty($email))
         {
-            echo "email should be provided","<br>";   
+            $emailError="email should be provided";   
+            $hasError=true;
         }
         elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
         {
-            echo "Invalid email format","<br>";
+            $emailError="Invalid email format";
+            $hasError=true;
         }
-        else
-        {
-            echo $email,"<br>";
-        }
+        
         if(empty($gender))
         {
-            echo "Gender should be provided","<br>";  
+            $genderError="Gender should be provided";  
+            $hasError=true;
         }
-        else
-        {
-            echo $gender,"<br>";
-        }
+        
         if(empty($sports))
         {
-            echo "At Least one sports  should be provided","<br>";  
+            $hasError=true;
+            $sportsError="At Least one sports  should be provided";  
         }
-        else
-        {
-          echo implode(",", $sports),"<br>";   
-        }
+       
         
         if(empty($country))
         {
-            echo "country should be provided","<br>";  
+            $countryError= "country should be provided";  
+            $hasError=true;
         }
-        else
-        {
-            echo $country,"<br>";
-        }
+        
 
         if($fileError==4)
         {
-            echo "Pro Pic should be provided","<br>";  
+            $hasError=true;
+            $file_error="Pro Pic should be provided";  
         }
 
         elseif(!in_array($fileType, $allowedTypes))
         {
-            echo "only pdf and jpeg are allowed","<br>";
+            $file_error="only pdf and jpeg are allowed";
+            $hasError=true;
         }
         elseif($fileSize>(2*1024*1024))
         {
-            echo "file is too large. max size allowed is 2mb","<br>";
+            $file_error="file is too large. max size allowed is 2mb";
+            $hasError=true;
         }
         else
         {
-            echo $fileName,"<br>";
+            $tmp_loc=$_FILES["proPic"]["tmp_name"];
+            $des_dir=__DIR__."/upload/";
+
+            if(!is_dir($des_dir))
+            {
+                mkdir($des_dir,0775,true);
+            }
+
+            $destinaion=$des_dir.$fileName;
+
+           $success= move_uploaded_file($tmp_loc,$destinaion);
+
+           if($success)
+            {
+
+            }
+            else
+            {
+                $file_error="file cannot be moved due to some error";
+                $hasError=true;
+            }
         }
 
+
+
+        if($hasError)
+        {
+        
+            $url="Location: index.php?nameError=".urlencode($nameError)."&emailError=".$emailError."&ageError=".$ageError."&genderError=".$genderError."&sportsError=".$sportsError."&countryError=".$countryError."&file_Error=".$file_error."&name=".$name;
+            if(!empty($sports))
+                {
+                    $url=$url."&sports=".implode(",", $sports);
+                }
+                    
+            header($url); 
+        }
+
+        else
+        {
+            echo $name,"<br>";
+            echo $age,"<br>";
+            echo $email,"<br>";
+            echo $gender,"<br>";
+            echo implode(", ",$sports),"<br>";
+            echo $country,"<br>";
+            echo $fileName,"<br>";
+        }
+        
+
+        
 
         
       
