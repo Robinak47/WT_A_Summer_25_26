@@ -5,6 +5,7 @@ $pass="";
 $dbName="wt_A";
 
 
+
 $conn=mysqli_connect($serverName, $userName, $pass, $dbName);
 
 if(!$conn)
